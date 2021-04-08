@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.laptrinh</groupId>
+	<artifactId>spring-boot</artifactId>
+	<version>1.0</version>
+
+	<!-- khai báo thư viện, phiên bản của framework spring boot và Java 1.8 
+		version -->
+
+	<!-- spring-boot-starter-parent là một project sẵn có trong Spring Boot. 
+		Các thư viện phụ thuộc cơ bản đã được khai báo trong spring-boot-starter-parent, 
+		project của bạn chỉ cần thừa kế nó. -->
+	<parent> <!-- thư viện và version spring boot -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+
+	<properties> <!-- Java Version của project -->
+		<java.version>1.8</java.version>
+		<mysql.version>8.0.23</mysql.version>
+		<datajpa.version>2.4.4</datajpa.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Các "Starter" khác chỉ đơn giản là cung cấp phụ thuộc mà bạn có khả 
+			năng cần thiết khi phát triển một loại hình cụ thể của ứng dụng. Chẳng hạn 
+			khi bạn phát triển một ứng dụng web, bạn cần một phụ thuộc spring-boot-starter-web. -->
+
+		<dependency> <!-- thư viện hỗ trợ cho web project: sd resfull webservices... -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+<!-- sửa lỗi java.lang.NoClassDefFoundError: javax / xml / bind / JAXBException -->
+		<!-- API, java.xml.bind module -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!-- Runtime, com.sun.xml.bind module -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+<!-- END sửa lỗi java.lang.NoClassDefFoundError: javax / xml / bind / JAXBException -->
+
+
+	</dependencies>
+
+	<!-- Spring-boot-maven-plugin là plugin cung cấp các thư viện cần thiết 
+		giúp project của bạn có thể chạy trực tiếp mà không cần triển khai trên một 
+		Web Server. Nó giúp tạo ra một file jar có thể thực thi (Executable) -->
+
+	<build> <!-- thư viện hỗ trợ build project -->
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- END khai báo thư viện, phiên bản của framework spring boot và Java 
+		1.8 version -->
+
+</project>
