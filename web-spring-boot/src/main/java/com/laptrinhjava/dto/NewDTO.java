@@ -5,6 +5,9 @@ public class NewDTO {
 	private String title;
 	private String content;
 	private String comment;
+	private String shortDescription;
+	private String categoryCode;
+	private String thumbnail;
 	private Long[] ids;
 	public String getTitle() {
 		return title;
@@ -24,10 +27,29 @@ public class NewDTO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	public String getShortDescription() {
+		return shortDescription;
+	}
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	public Long[] getIds() {
 		return ids;
 	}
 	public void setIds(Long[] ids) {
 		this.ids = ids;
 	}
+	
 }
