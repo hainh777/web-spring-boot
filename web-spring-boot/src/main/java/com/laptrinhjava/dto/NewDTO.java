@@ -1,6 +1,6 @@
 package com.laptrinhjava.dto;
 
-public class NewDTO {
+public class NewDTO extends BaseDTO<NewDTO>{
 
 	private String title;
 	private String content;
@@ -8,7 +8,7 @@ public class NewDTO {
 	private String shortDescription;
 	private String categoryCode;
 	private String thumbnail;
-	private Long[] ids;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -44,12 +44,6 @@ public class NewDTO {
 	}
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
-	}
-	public Long[] getIds() {
-		return ids;
-	}
-	public void setIds(Long[] ids) {
-		this.ids = ids;
 	}
 	
 }
