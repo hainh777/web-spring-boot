@@ -10,5 +10,7 @@ public interface INewService {
 	NewDTO save (NewDTO newDTO);
 	void delete(Long[] ids);
 	List<NewDTO> findAll(Pageable pageable);
+	List<NewDTO> findAll();
+	List<NewDTO> findByTitleNative(String title);
 	int tatalItem();
 }

@@ -22,25 +22,38 @@ public class NewAPI {
 	@Autowired
 	private INewService newServices;
 	
-	@GetMapping(value = "/new")
-	public NewOutput showNew(@RequestParam("page") int page, @RequestParam("limit") int limit) {
+	@GetMapping(value = "/api/new")
+	public NewOutput showNew(@RequestParam(value = "page", defaultValue = "1") Integer page,
+								@RequestParam(value = "limit", defaultValue = "-1") Integer limit,
+								@RequestParam(value = "title", defaultValue = "none") String title) {
 		NewOutput result = new NewOutput();
-		result.setPage(page);
-		Pageable pageable = new PageRequest(page - 1, limit);
-		result.setListResult(newServices.findAll(pageable));
-		result.setTotalPage((int) Math.ceil((double) (newServices.tatalItem()) / limit));
+//		test thêm tìm kiếm theo title dùng native sql
+		if(!title.equals("none")) {
+			result.setListResult(newServices.findByTitleNative(title));
+			return result;
+		}
+//		có phân trang khi page và limit có giá trị đúng
+		if(limit > 0 && title.equals("none")) {
+			result.setPage(page);
+			Pageable pageable = new PageRequest(page - 1, limit);
+			result.setListResult(newServices.findAll(pageable));
+			result.setTotalPage((int) Math.ceil((double) (newServices.tatalItem()) / limit));
+		} else {
+//			không phân trang
+			result.setListResult(newServices.findAll());
+		}
 		return result;
 	}
-	@PostMapping(value = "/new")
+	@PostMapping(value = "/api/new")
 	public NewDTO createNew(@RequestBody NewDTO model) {
 		return newServices.save(model);
 	}
-	@PutMapping(value = "/new/{id}")
+	@PutMapping(value = "/api/new/{id}")
 	public NewDTO updateNew(@RequestBody NewDTO model, @PathVariable("id") Long id) {
 		model.setId(id);
 		return newServices.save(model);
 	}
-	@DeleteMapping(value = "/new")
+	@DeleteMapping(value = "/api/new")
 	public void deleteNew(@RequestBody Long[] ids) {
 		newServices.delete(ids);
 	}
