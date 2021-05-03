@@ -69,6 +69,25 @@
 		</dependency>
 		<!-- END sử dụng JSP ở tầng view -->
 
+		<!-- sử dụng thymeleaf ở tầng view thư mục mặc định cài đặt ở resources/templates 
+			file là .html -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.boot</groupId> -->
+<!-- 			<artifactId>spring-boot-starter-thymeleaf</artifactId> -->
+<!-- 		</dependency> -->
+		<!-- thư viện sửa lỗi Exception parsing document: template="views/index" -->
+		<!-- thêm 2 dòng "spring.thymeleaf.mode=LEGACYHTML5" và "spring.thymeleaf.cache=false" 
+			ở file application.properties để sửa lỗi -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>net.sourceforge.nekohtml</groupId> -->
+<!-- 			<artifactId>nekohtml</artifactId> -->
+<!-- 			<version>1.9.22</version> -->
+<!-- 		</dependency> -->
+		<!-- END thư viện sửa lỗi Exception parsing document: template="views/index" -->
+		<!-- END sử dụng thymeleaf ở tầng view thư mục mặc định cài đặt ở resources/templates 
+			file là .html -->
+
+
 		<!-- =================================================================== -->
 		<!-- sửa lỗi java.lang.NoClassDefFoundError: javax / xml / bind / JAXBException -->
 		<!-- API, java.xml.bind module -->
