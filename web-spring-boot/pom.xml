@@ -54,7 +54,22 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
+		<!-- sử dụng JSP ở tầng view thư mục mặc định cài đặt ở packeage config 
+			MvcConfig.java file là .jsp -->
+		<!-- JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<!-- To compile JSP files -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- END sử dụng JSP ở tầng view -->
 
+		<!-- =================================================================== -->
 		<!-- sửa lỗi java.lang.NoClassDefFoundError: javax / xml / bind / JAXBException -->
 		<!-- API, java.xml.bind module -->
 		<dependency>
@@ -62,7 +77,6 @@
 			<artifactId>jakarta.xml.bind-api</artifactId>
 			<version>2.3.2</version>
 		</dependency>
-
 		<!-- Runtime, com.sun.xml.bind module -->
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
@@ -70,7 +84,6 @@
 			<version>2.3.2</version>
 		</dependency>
 		<!-- END sửa lỗi java.lang.NoClassDefFoundError: javax / xml / bind / JAXBException -->
-
 
 	</dependencies>
 

@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>new home</h1>
+<h1> this is H1</h1>
+<h1> WEB in WEB-INF/views/index.jsp</h1>
+<a href="http://localhost:8081/api/new?limit=2&page=1"> <h1>http://localhost:8081/api/new?limit=2&page=1</h1></a>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class NewAPI {
 
 	@Autowired
 	private INewService newServices;
-	
+
 	@GetMapping(value = "/api/new")
 	public NewOutput showNew(@RequestParam(value = "page", defaultValue = "1") Integer page,
 								@RequestParam(value = "limit", defaultValue = "-1") Integer limit,
