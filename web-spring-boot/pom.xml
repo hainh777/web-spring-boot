@@ -57,32 +57,32 @@
 		<!-- sử dụng JSP ở tầng view thư mục mặc định cài đặt ở packeage config 
 			MvcConfig.java file là .jsp -->
 		<!-- JSTL -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.servlet</groupId> -->
+<!-- 			<artifactId>jstl</artifactId> -->
+<!-- 		</dependency> -->
 		<!-- To compile JSP files -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.tomcat.embed</groupId> -->
+<!-- 			<artifactId>tomcat-embed-jasper</artifactId> -->
+<!-- 			<scope>provided</scope> -->
+<!-- 		</dependency> -->
 		<!-- END sử dụng JSP ở tầng view -->
 
 		<!-- sử dụng thymeleaf ở tầng view thư mục mặc định cài đặt ở resources/templates 
 			file là .html -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-thymeleaf</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<!-- thư viện sửa lỗi Exception parsing document: template="views/index" -->
 		<!-- thêm 2 dòng "spring.thymeleaf.mode=LEGACYHTML5" và "spring.thymeleaf.cache=false" 
 			ở file application.properties để sửa lỗi -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>net.sourceforge.nekohtml</groupId> -->
-<!-- 			<artifactId>nekohtml</artifactId> -->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
 <!-- 			<version>1.9.22</version> -->
-<!-- 		</dependency> -->
+		</dependency>
 		<!-- END thư viện sửa lỗi Exception parsing document: template="views/index" -->
 		<!-- END sử dụng thymeleaf ở tầng view thư mục mặc định cài đặt ở resources/templates 
 			file là .html -->

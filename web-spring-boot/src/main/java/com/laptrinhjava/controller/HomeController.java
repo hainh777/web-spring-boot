@@ -9,7 +9,7 @@ public class HomeController {
 
 	@GetMapping(value = "/")
 	public ModelAndView homePage() {
-		ModelAndView mav = new ModelAndView("/views/index");
+		ModelAndView mav = new ModelAndView("index");
 		return mav;
 	}
 }
