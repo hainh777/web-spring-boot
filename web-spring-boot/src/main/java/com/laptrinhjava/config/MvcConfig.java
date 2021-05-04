@@ -28,15 +28,16 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         return templateResolver;
     }
 // END cấu hình thư mục templates mặc định cho thymeleaf ở tầng View
+	
 	//cấu hình thư mục templates mặc định cho JSP ở tầng View
-	@Override
-	public void configureViewResolvers(ViewResolverRegistry registry) {
-		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/views/");
-		resolver.setSuffix(".jsp");
-		resolver.setViewClass(JstlView.class);
-		registry.viewResolver(resolver);
-	}
+//	@Override
+//	public void configureViewResolvers(ViewResolverRegistry registry) {
+//		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//		resolver.setPrefix("/WEB-INF/views/");
+//		resolver.setSuffix(".jsp");
+//		resolver.setViewClass(JstlView.class);
+//		registry.viewResolver(resolver);
+//	}
 // END cấu hình thư mục templates mặc định cho JSP ở tầng View
 	
 }
